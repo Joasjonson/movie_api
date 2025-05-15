@@ -2,16 +2,18 @@ from rest_framework import serializers
 from movies.models import Movie
 from django.db.models import Avg
 from genres.serializer import GenresSerializer
+from actors.models import Actor
 from actors.serializer import ActorSerializer
 
 class MovieSerializer(serializers.ModelSerializer):
+    actors = serializers.PrimaryKeyRelatedField(queryset=Actor.objects.all(), many=True)
     
     class Meta:
         model = Movie
         fields = '__all__'
 
     def validate_release_date(self, value):
-        if value < 1950:
+        if value.year < 1950:
             raise serializers.ValidationError("Release date must be after 1950.")
         return value
 
@@ -35,5 +37,3 @@ class MovieListSerializer(serializers.ModelSerializer):
         if rate:
             return round(rate, 1)
         return 0.0
-    
-    
