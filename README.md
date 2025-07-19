@@ -2,7 +2,7 @@
 
 This is a REST API developed with Django REST Framework, with the goal of practicing and deepening knowledge in back-end development.
 
-The API manages information related to movies, genres, actors and reviews, in addition to having user authentication and authorization with JWT.
+The API manages information related to films, genres, actors and reviews, in addition to having user authentication and authorization with JWT and also an endpoint that brings statistics and data about films.
 
 ## ⚙️ Features
 
@@ -11,7 +11,7 @@ The API manages information related to movies, genres, actors and reviews, in ad
 - 🏷️ Genre CRUD
 - 🎭 Actor CRUD
 - ✍️ Reviews CRUD
-- 🔎 Possible expansion with filters, pagination and search
+- API statistics
 ---
 
 ## 🛠️ Technologies used
